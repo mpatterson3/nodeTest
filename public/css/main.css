@@ -1,4 +1,5 @@
-  #app {
+#app {
+    background-image: url("../images/flower.png");
     min-height: 100vh;
     color: #000;
     font-family: 'Muli', sans-serif;
@@ -13,7 +14,7 @@
     background-color: #fff;
     padding: 1em;
     border-radius: 1em;
-    max-width: 768px;
+    /*max-width: 768px;*/
     display: -ms-grid;
     display: grid;
     place-items: center;
@@ -35,7 +36,6 @@
     max-width: 2400px;
     overflow: hidden;
     padding: 0;
-    background-image: url("../images/flower.png");
   }
   
   .img {
