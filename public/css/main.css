@@ -40,19 +40,18 @@
   }
   
   .img {
-    width: 100%;
+    max-width: 25%;
     height: auto;
     border-radius: 1em 1em 0 0;
     -o-object-fit: cover;
        object-fit: cover;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+
   }
   
   .img__container {
     height: 25%;
     overflow: hidden;
-    margin-bottom: 1.5em;
+    margin-bottom: .5em;
   }
   
   .title {
