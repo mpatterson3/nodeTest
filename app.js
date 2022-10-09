@@ -1,6 +1,6 @@
 
 const express = require("express");
-var app = express();
+const app = express();
 
 const indexRouter = require("./routes/home");
 const subscriberRouter = require("./routes/home");
