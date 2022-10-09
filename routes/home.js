@@ -1,12 +1,12 @@
-const express = require('express');
-const router = express.Router();
+var express = require('express');
+var router = express.Router();
+var mongoose = require('mongoose');
 router.get("/",(req,res)=>{
-    res.send("index.html");
+    res.send("./index.html");
 });
 router.post('/',(req,res)=>{
-    res.send(req.body);
     console.log(req.body);
-    mongoose.model('subscriber').create(
+    mongoose.model('subscribers').create(
         {
             fname:req.body.fname,
             lname:req.body.lname,
@@ -19,6 +19,8 @@ router.post('/',(req,res)=>{
             }
             res.send("you fucked up Mel");
         }
-    );
-});
-module.exports = router;
+        );
+        res.send("Doh Doh");
+    });
+const home =router;
+module.exports = home;

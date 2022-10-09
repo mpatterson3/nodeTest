@@ -1,31 +1,32 @@
 
 const express = require("express");
-const app = express();
+var app = express();
 
-const mongoose = require("mongoose");
 const indexRouter = require("./routes/home");
-mongoose.connect('mongodb://localhost/loudworm');
+const subscriberRouter = require("./routes/home");
+const mongoose = require("mongoose");
+mongoose.connect('mongodb+srv://mpatterson3:Destiny10161971@cluster0.etaow.mongodb.net/?retryWrites=true&w=majority');
 var db = mongoose.connection;
-db.on('connection',()=>{
-    console.log('connected to db');
-});
+db.on("error", console.error.bind(console, "MongoDB connection error:"));
+// db.on('connection',()=>{
+//     console.log('connected to db');
+// });
 const subscriberSchema = {
     fname:String,
     lname:String,
     phone:String,
     email:String
 };
-mongoose.model('subscriber',subscriberSchema);
+mongoose.model('subscribers',subscriberSchema);
 //app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(express.static('public'));
-app.use("indexRouter",indexRouter);
+app.use("/",indexRouter);
+app.use("/subscribers",subscriberRouter);
 
 const port = process.env.PORT || 3000;
 
-// app.get("/",(req,res)=>{
-//     res.send("index.html");
-// });
+
 
 app.listen(port,()=>{
     console.log("wassup on port ",port);
