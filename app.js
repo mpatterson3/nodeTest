@@ -23,7 +23,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.static('public'));
 app.use("/",indexRouter);
 app.use("/subscribers",subscriberRouter);
-app.set('viewengine','jade')
+app.set('view engine','pug')
 const port = process.env.PORT || 3000;
 
 

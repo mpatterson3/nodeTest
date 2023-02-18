@@ -1,0 +1,26 @@
+extends layout.pug
+
+block content
+  #app.wrapper
+    #header.container
+      .section
+        p.title Welcome to the Homepage
+    .container
+      img.img(src='./images/worm.png', alt='flowers')
+      .content
+        h2.subtitle Your Favorite Cannabis Delivered
+        h1.title Quality Cannabis delivered straight to your door
+    #contactForm.contactForm
+      form.contactFormField(action='', method='post')
+        label.text(for='fname') First Name
+        input.mail(type='text', name='fname', id='fname')
+        label.text(for='lname') Last Name
+        input.mail(type='text', name='lname', id='lname')
+        label.text(for='phone') phone
+        input.mail(type='phone', name='phone', id='phone')
+        label.text(for='email') Email
+        input.mail(type='email', name='email', id='email')
+        button.subscribe(type='submit') Subscribe
+    #footer
+      p.text Copyright LoudWorm.com
+      .section
