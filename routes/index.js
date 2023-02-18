@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
 router.get("/",(req,res)=>{
-    res.send("./index.html");
+    res.render("../views/index");
 });
 router.post('/',(req,res)=>{
     console.log(req.body);
