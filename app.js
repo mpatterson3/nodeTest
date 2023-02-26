@@ -1,7 +1,7 @@
 
 const express = require("express");
 const app = express();
-
+const cors = require('cors');
 const indexRouter = require("./routes/index");
 const subscriberRouter = require("./routes/subscribers");
 const mongoose = require("mongoose");
@@ -19,6 +19,7 @@ const subscriberSchema = {
 };
 mongoose.model('subscribers',subscriberSchema);
 app.use(express.json());
+app.use(cors());
 app.use(express.urlencoded({extended:true}));
 app.use(express.static('public'));
 app.use("/",indexRouter);
