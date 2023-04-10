@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require("mongoose");
-var subscribers = require('../models');
+var subscribersModel = require('../models');
 
 router.get("/",(req,res)=>{
     res.render("../views/subscribers");
@@ -9,7 +9,7 @@ router.get("/",(req,res)=>{
 /* POST subscriber. */
 router.post('/', async (req, res, next) => {
     try {
-      const newSubscriber = new subscribers({
+      const newSubscriber = new subscribersModel({
         fname: req.body.fname,
         lname: req.body.lname,
         email: req.body.email,
