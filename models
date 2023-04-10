@@ -1,0 +1,12 @@
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+const subscriberSchema = new Schema(
+    {
+        fname:String,
+        lname:String,
+        email:String,
+        phone:String,
+    }
+)
+const subscribers = mongoose.model('subscriberModel',subscriberSchema);
+module.exports = subscribers;
